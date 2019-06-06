@@ -14,7 +14,7 @@ module.exports = (function () {
 	var that = {};
 	
 	//--------REGISTER-----
-	var registerButton="//a[contains(text(),'REGISTER')]";
+	var registerButton="//a[contains(text(),'REGISTER')]"; //gfygfhgf
 	var registerSign ="//td/img[@src='/images/masts/mast_register.gif']";
 	var firstNameInput="//input[@name='firstName']";
 	var lastNameInput="//input[@name='lastName']";
