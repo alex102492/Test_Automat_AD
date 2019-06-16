@@ -16,7 +16,7 @@ describe('spec_RegisterPage', function() {
 
 			testdata.forEach (function (data) {
 				
-		it('Open the page, Register user, Log Out', function(){
+		it('Register Page', function(){
 								
 			registerPage.registerUserSuccess(data.URL, data.firstName, data.lastName, data.phone, data.email, data.adress1, data.adress2, data.city, data.state, data.postalCode, data.username, data.password, data.confirmPassword);
 			console.log ("The user has register succesfully!");

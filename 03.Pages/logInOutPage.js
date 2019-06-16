@@ -24,6 +24,9 @@ module.exports = (function(logInOutPage) {
 		//wait 1 sec
 		browser.sleep(1000);
 		
+		//Verify the page name
+		expect(browser.getTitle()).toEqual('Welcome: Mercury Tours'); 
+		
 		//Verify if Sign-On Button exists on Page
 		expect(logInOutPage.signOnButtonPresent).toBeTruthy();
 		
@@ -37,13 +40,16 @@ module.exports = (function(logInOutPage) {
 		//wait 1 sec
 		browser.sleep(1000);	
 		
+		//Verify the page name
+		expect(browser.getTitle()).toEqual('Sign-on: Mercury Tours');
+		
 		//Verify image on the Sign-On page
 		expect(logInOutPage.signOnSignPresent).toBeTruthy();
 	
 		
 		//Fill Username
-		logInOutPage.emailFill(username);
-		console.log("I filled in usernme" + username);
+		logInOutPage.emailFill(username+logInOutPage.randomIntegerTwoDigits);
+		console.log("I filled in usernme" + username+logInOutPage.randomIntegerTwoDigits);
 		
 		//wait 1 sec
 		browser.sleep(1000);		

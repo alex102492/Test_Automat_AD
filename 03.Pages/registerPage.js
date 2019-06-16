@@ -24,6 +24,10 @@ module.exports = (function(registerPage) {
 		//wait 1 sec
 		browser.sleep(1000);
 		
+		//Verify the page name
+		expect(browser.getTitle()).toEqual('Welcome: Mercury Tours'); 
+		
+		
 		//Verify if Register Button exists on Page
 		expect(registerPage.registerButtonPresent).toBeTruthy();
 		
@@ -36,6 +40,9 @@ module.exports = (function(registerPage) {
 		
 		//wait 1 sec
 		browser.sleep(1000);	
+		
+		//Verify the page name
+		expect(browser.getTitle()).toEqual('Register: Mercury Tours'); 
 		
 		//Verify image on the Registration page
 		expect(registerPage.registerSignPresent).toBeTruthy();
@@ -62,8 +69,8 @@ module.exports = (function(registerPage) {
 		browser.sleep(1000);	
 		
 		//Fill Email
-		registerPage.emailFill(email);
-		console.log("I filled in email "+ email);
+		registerPage.emailFill(email+registerPage.randomEmail);
+		console.log("I filled in email "+ email+registerPage.randomEmail);
 		
 		//wait 1 sec
 		browser.sleep(1000);	
@@ -111,8 +118,8 @@ module.exports = (function(registerPage) {
 		browser.sleep(1000);	
 		
 		//Fill Username
-		registerPage.usernameFill(username);
-		console.log("I filled in username" + username);
+		registerPage.usernameFill(username+registerPage.randomIntegerTwoDigits);
+		console.log("I filled in username" + username+registerPage.randomIntegerTwoDigits);
 		
 		//wait 1 sec
 		browser.sleep(1000);		
@@ -138,7 +145,7 @@ module.exports = (function(registerPage) {
 		browser.sleep(1000);
 		
 		//Verify text Register successfully
-		expect(registerPage.registerSuccessfullyGetText()).toEqual("Note: Your user name is "+username+".");
+		expect(registerPage.registerSuccessfullyGetText()).toEqual("Note: Your user name is "+username+registerPage.randomIntegerTwoDigits+".");
 				
 	};//end function
 
